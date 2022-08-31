@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gestion des produits</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left" id="leftClass">
+            <div class="logo"><i style="font-size:39px" class="fa faL">&#xf23a;</i> G.<span id="span">S</span>.P</div>
+            <div class="centent">
+                <div onclick="Dashboard()" class="cls-menu"><i id="dashstyle" style="font-size:20px" class="fa">&#xf0e4;</i> <span>Dashboard</span>  </div>
+                <div  onclick="LireProduit()" class="cls-menu"><i id="toutproduit" style="font-size:20px" class="fa">&#xf0c0;</i> <span>Tout produits</span> </div>
+                <div onclick="AfficherAjoute()" class="cls-menu" ><i id="ajouteprod"  style="font-size:20px" class="fa">&#xf055;</i> <span>Ajouté produit</span> </div>
+                <div class="cls-menu" onclick="SupprimerTout()"><i id="suprimerto"  style="font-size:20px" class="fa">&#xf1f8;</i> <span>Supprimer Tout</span> </div>
+                <div onclick="Trier()" class="cls-menu"><i id="TrierProds"  style="font-size:20px" class="fa">&#xf15d;</i> <span>Triér</span> </div>
+            </div>
+        </div>
+        
+        <div class="right" id="right">
+
+            <div class="head" id="head">
+                <span>Gestion des Produits</span>
+
+                <div class="titre">
+                    <div>Dark Mode</div>
+                    <div class="darkmode" id="darkmode">
+                        <div onclick="DarkMode()" class="light" id="light"></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="hide" id="AjouteClass">
+                <h1 id="h1">Ajouté Produit</h1>
+                <input class="cls-input" type="text" placeholder="Référence" id="reference"> 
+                <input class="cls-input" type="text" placeholder="Désignation" id="designation"> 
+                <input class="cls-input" type="number" placeholder="Prix" id="prix"> 
+                <input class="cls-input" type="number" placeholder="TVA" id="tva"> 
+                <input class="cls-input" type="text" placeholder="Disponiblité" id="dispo"> 
+                <input class="cls-input" type="number" placeholder="Compter" id="cnt">  
+                <button onclick=" AjouteProduit()" class="cl-input" id="AjouteBtn">Ajouté</button> 
+            </div>
+
+            <div class="hide" id="ModifierClass">
+                <h1 id="h2">Modifier Produit</h1>
+                <input class="cls-input" type="text" placeholder="Nouveau Référence" id="nreference"> 
+                <input class="cls-input" type="text" placeholder="Nouveau Désignation" id="ndesignation"> 
+                <input class="cls-input" type="number" placeholder="Nouveau Prix" id="nprix"> 
+                <input class="cls-input" type="number" placeholder="Nouveau TVA" id="ntva"> 
+                <input class="cls-input" type="text" placeholder="Disponiblité" id="ndispo"> 
+                <button onclick="ModifierBtn()" class="cl-input" id="ModifiereBtn">Modifier</button> 
+            </div>
+
+            <input onkeyup="Rechercher()" type="search" placeholder="Rechercher par désignation" class="cls-recherche hide" id="rechercher">
+            <div class="cls-table hide" id="AffichageTbale">
+                <table id="table">
+                    <tr>
+                        <th id="clsth1">Référence</th>
+                        <th id="clsth2">Désignation</th>
+                        <th id="clsth3">Prix</th>
+                        <th id="clsth4">Tva</th>
+                        <th id="clsth5">Disponiblité</th>
+                        <th id="clsth6">Modifier</th>
+                        <th id="clsth7">Supprimer</th>
+                    </tr>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+
+          <div id="chart">
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+          </div>
+          
+        </div>
+
+    </div>
+    
+    <script src="Js/script.js"></script>
+</body>
+</html>
